@@ -57,6 +57,7 @@ npm run build
 
 Typical structure:
 
+```plaintext
 kc-landing-tile/
 ├── kc-landing-tile.php
 ├── block.json
@@ -65,6 +66,7 @@ kc-landing-tile/
 ├── assets/
 ├── package.json
 └── readme.md
+```
 
 ## Usage
 
