@@ -1,0 +1,86 @@
+.kc-tile {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 1rem;
+  color: #fff;
+  text-decoration: none;
+  isolation: isolate;
+}
+
+
+.kc-tile.has-shadow {
+	box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+}
+
+.kc-tile__media,
+.kc-tile__overlay,
+.kc-tile__content {
+	position: absolute;
+	inset: 0;
+}
+
+.kc-tile__media {
+	z-index: 1;
+	overflow: hidden;
+}
+
+.kc-tile__media img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transform: scale(1);
+	transition: transform 0.45s ease;
+}
+
+.kc-tile__media-placeholder {
+	display: grid;
+	place-items: center;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.08);
+	color: rgba(0, 0, 0, 0.55);
+	font-size: 0.9rem;
+}
+
+.kc-tile__overlay {
+	z-index: 2;
+	background: rgba(255, 255, 255, var(--kc-overlay-opacity, 0.5));
+	transition: opacity 0.25s ease;
+}
+
+.kc-tile__content {
+	z-index: 3;
+	display: grid;
+	align-content: end;
+	padding: 1.25rem;
+}
+
+.kc-tile__title {
+	margin: 0;
+	color: #000;
+}
+
+.kc-tile__title {
+  transition: color 0.25s ease;
+}
+
+.kc-tile:hover .kc-tile__title {
+  color: #ffffff;
+}
+
+
+.kc-tile:hover {
+	transform: translateY(-4px);
+}
+
+.kc-tile:hover .kc-tile__media img {
+	transform: scale(var(--kc-hover-zoom, 1.08));
+}
+
+.kc-tile:hover .kc-tile__overlay {
+	opacity: 0.15;
+}
